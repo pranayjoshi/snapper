@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import mongoose from "mongoose";
+import mongoose, { ConnectOptions } from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import multer, { MulterError } from "multer";
@@ -8,6 +8,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import { register } from "./controllers/Auth.js";
 
 /* CONFIGURATIONS */
 
@@ -36,4 +37,19 @@ const storage = multer.diskStorage({
     }
 })
 
+// console.log(process.env.MONGO_URL)
+mongoose.set('strictQuery', true)
+
 const upload = multer({storage});
+
+app.post("/auth/register", upload.single("picture"), register)
+
+/* MONGOOSE SETUP*/
+
+const PORT = process.env.PORT || 6001;
+mongoose.connect(`${process.env.MONGO_URL!}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+} as ConnectOptions).then(()=> {
+    app.listen(PORT, ()=>console.log(`Server Port ${PORT}`))
+}).catch((error)=>console.log(error))
