@@ -1,11 +1,10 @@
-import React from 'react';
 import {BrowserRouter, Navigate, Routes, Route} from "react-router-dom";
 import HomePage from 'scenes/homePage';
 import LoginPage from 'scenes/loginPage';
 import ProfilePage from 'scenes/profilePage';
+import Switcher from 'components/switcher';
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -15,6 +14,7 @@ function App() {
         <Route path="/profile/:userId" element={<ProfilePage/>}/>
         </Routes>
       </BrowserRouter>
+        <Switcher />
     </div>
   );
 }
