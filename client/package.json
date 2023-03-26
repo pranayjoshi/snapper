@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/style": "^0.8.0",
+    "@heroicons/react": "^2.0.16",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.14",
     "@reduxjs/toolkit": "^1.9.3",
@@ -51,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
   }
 }
