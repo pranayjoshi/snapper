@@ -9,7 +9,14 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import { register } from "./controllers/Auth.js";
+import { createPost } from "./controllers/Posts.js";
+import userRoutes from "./routes/Users.js"
 import authRoutes from "./routes/Auth.js";
+import postRoutes from "./routes/Posts.js";
+import { verifyToken } from "./middleware/Auth.js";
+import User from "./models/User.js";
+import { posts, users } from "./data/index.js";
+import Post from "./models/Posts.js";
 
 /* CONFIGURATIONS */
 
@@ -43,9 +50,13 @@ mongoose.set('strictQuery', true)
 
 const upload = multer({storage});
 
+// Routes with files
 app.post("/auth/register", upload.single("picture"), register)
+app.post("/posts", upload.single("picture"), verifyToken, createPost)
 
 app.use("/auth", authRoutes)
+app.use("/users", userRoutes)
+app.use("/posts", postRoutes)
 /* MONGOOSE SETUP*/
 
 const PORT = process.env.PORT || 6001;
@@ -54,4 +65,8 @@ mongoose.connect(`${process.env.MONGO_URL!}`, {
     useUnifiedTopology: true,
 } as ConnectOptions).then(()=> {
     app.listen(PORT, ()=>console.log(`Server Port ${PORT}`))
+
+    // ONE TIME
+    // User.insertMany(users);
+    // Post.insertMany(posts);
 }).catch((error)=>console.log(error))
