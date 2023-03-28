@@ -16,12 +16,10 @@ export default function Switcher() {
     return (
         <>
             <DarkModeSwitch
-                style={{ marginBottom: "2rem" }}
                 checked={darkSide}
                 onChange={toggleDarkMode}
-                size={30}
+                size={25}
             />
-            <h3 className="text-gray-800 dark:text-gray-300">{colorTheme === "light" ? "Dark Mode" : "Light Mode"}</h3>
         </>
     );
 }
