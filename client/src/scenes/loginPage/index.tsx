@@ -1,10 +1,11 @@
 import React from 'react'
 import { Navbar } from 'scenes/navbar'
+import { Form } from './form'
 
 const LoginPage = () => {
   return (
     <><Navbar />
-    <div>loginPage</div></>
+    <Form /></>
   )
 }
 
