@@ -60,6 +60,7 @@ export const Form = () => {
       }
     );
     const savedUser = await savedUserResponse.json();
+    console.log(savedUser)
     onSubmitProps.resetForm();
 
     if (savedUser) {
@@ -89,10 +90,17 @@ export const Form = () => {
 
   const handleFormOnsubmit = async (values, onSubmitProps) => {
     // console.log(values)
+    console.log("dad")
     console.log(values)
-    // if (isLogin) await login(values, onSubmitProps);
-    // if (isRegister) await register(values, onSubmitProps);
+    if (isLogin) await login(values, onSubmitProps);
+    if (isRegister) await register(values, onSubmitProps);
   };
+
+  function onClickc(e){
+    e.preventDefault()
+    console.log(isLogin)
+
+  }
 
   return (
     <>
@@ -136,7 +144,7 @@ export const Form = () => {
                       </a>
                     </p>
 
-                    <form action="#" method="POST" className="mt-8" onChange={handleSubmit}>
+                    <form id='my-form' className="mt-8" onSubmit={handleSubmit}>
                       <div className="space-y-5 w-full">
                         {isRegister && (
                           <>
@@ -163,7 +171,7 @@ export const Form = () => {
                                     className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                                     type="text"
                                     placeholder="Enter You First Name"
-                                    id="fname"
+                                    id="firstName"
                                   ></input>
                                 </div>
                               </div>
@@ -189,7 +197,7 @@ export const Form = () => {
                                     className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                                     type="text"
                                     placeholder="Enter You Last Name"
-                                    id="lname"
+                                    id="lastName"
                                   ></input>
                                 </div>
                               </div>
@@ -293,7 +301,7 @@ export const Form = () => {
                                 }
                                 helperText={touched.email && errors.email}
                                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                                  type="email"
+                                
                                   placeholder="Enter Your Email"
                                 ></input>
                               </div>
@@ -318,18 +326,17 @@ export const Form = () => {
                                 }
                                 helperText={touched.password && errors.password}
                                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                                  type="password"
+                                  
                                   placeholder="Enter Your Password"
-                                  id="password"
                                   
                                 ></input>
                               </div>
                             </div>
 
                         <div>
-                          <button
+                          <button id='my-form'
                             className="w-full inline-flex items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500"
-                            type="submit" 
+                            type="submit"
                           >
                             Get started
                             <svg
@@ -349,9 +356,7 @@ export const Form = () => {
                           </button>
                         </div>
                       </div>
-                    </form>
-
-                    <div className="mt-3 space-y-3">
+                      <div className="mt-3 space-y-3">
                       <button
                         type="button"
                         className="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 dark:text-gray-400 transition-all duration-200 bg-white border border-gray-500 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none"
@@ -405,6 +410,9 @@ export const Form = () => {
                         </span>
                       </p>
                     </div>
+                    </form>
+
+                    
                   </div>
                 </div>
               </div>
