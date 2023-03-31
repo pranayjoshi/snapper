@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserImage from "components/UserImage";
 
-import {MapPin, Briefcase} from "@styled-icons/heroicons-outline/";
+import {MapPin, Briefcase, Cog6Tooth} from "@styled-icons/heroicons-outline/";
 
 
 interface Props {
@@ -46,31 +46,36 @@ const UserWidget = ({userId, picturePath}:Props) => {
   return (
     <div className="border rounded-lg divide-y ">
       <div onClick={() => navigate(`/profile/${userId}`)} className="flex">
-        <UserImage image={picturePath} />
-        <p className="px-4 py-2">
+        <div className="py-2 pl-2"><UserImage image={picturePath} /></div>
+        <div>
+        <p className="px-2 pt-4 text-gray-700 text-sm">
           {firstName} {lastName}
         </p>
+        <p className="text-gray-400 px-2 text-xs">{friends["length"]} friends</p>
+        </div>
+        <Cog6Tooth className="w-6 ml-12"/>
       </div>
       <div >
-        <div className="flex">
-          <MapPin className="w-6" />
+        <div className="flex m-2">
+          <MapPin className="w-8 pr-2" />
           <p className="text-gray-400">{location}</p>
         </div>
-        <div className="items-center flex">
-          <Briefcase className="w-6" />
+        <div className="items-center flex m-2">
+          <Briefcase className="w-8 pr-2" />
           <p className="text-gray-400">{occupation}</p>
         </div>
+        
       </div>
       <div >
-        <div className="flex">
-          <p className="text-gray-400">Who's viewed your profile</p>
-          <div className="text-gray-700 dark:text-gray-200" >
+        <div className="flow-root m-2">
+          <p className="text-gray-400 text-sm float-left">Who's viewed your profile:</p>
+          <div className="text-gray-700 dark:text-gray-200 text-sm float-right" >
             {viewedProfile}
           </div>
         </div>
-        <div className="flex">
-          <p className="text-gray-400">Who's viewed your profile</p>
-          <div className="text-gray-700 dark:text-gray-200" >
+        <div className="flow-root m-2">
+          <p className="text-gray-400 text-sm float-left">Who's viewed your profile:</p>
+          <div className="text-gray-700 dark:text-gray-200 text-sm float-right" >
             {impressions}
           </div>
         </div>
