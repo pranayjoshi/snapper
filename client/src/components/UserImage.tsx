@@ -1,6 +1,10 @@
 
+interface Props {
+    image: string;
+    size?: string;
+}
 
-const UserImage = (image:string, size = "60px" ) => {
+const UserImage = ({image, size = "60px"}:Props ) => {
   return (
     <div>
       <img
