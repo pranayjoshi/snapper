@@ -164,10 +164,6 @@ export const Form = () => {
                                   onChange={handleChange}
                                   value={values.firstName}
                                   name="firstName"
-                                  error={
-                                    Boolean(touched.firstName) && Boolean(errors.firstName)
-                                  }
-                                  helperText={touched.firstName && errors.firstName}
                                     className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                                     type="text"
                                     placeholder="Enter You First Name"
@@ -190,10 +186,6 @@ export const Form = () => {
                                   onChange={handleChange}
                                   value={values.lastName}
                                   name="lastName"
-                                  error={
-                                    Boolean(touched.lastName) && Boolean(errors.lastName)
-                                  }
-                                  helperText={touched.lastName && errors.lastName}
                                     className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                                     type="text"
                                     placeholder="Enter You Last Name"
@@ -217,10 +209,6 @@ export const Form = () => {
                                 onChange={handleChange}
                                 value={values.location}
                                 name="location"
-                                error={
-                                  Boolean(touched.location) && Boolean(errors.location)
-                                }
-                                helperText={touched.location && errors.location}
                                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                                   type="text"
                                   placeholder="Enter Your Location"
@@ -244,12 +232,6 @@ export const Form = () => {
                                 onChange={handleChange}
                                 value={values.occupation}
                                 name="occupation"
-                                error={
-                                  Boolean(touched.occupation) && Boolean(errors.occupation)
-                                }
-                                helperText={touched.occupation && errors.occupation}
-                                // error={Boolean(touched.email) && Boolean(errors.email)}
-                                // helperText={touched.email && errors.email}
                                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                                   type="text"
                                   placeholder="Enter Your Occupation"
@@ -296,10 +278,6 @@ export const Form = () => {
                                 onChange={handleChange}
                                 value={values.email}
                                 name="email"
-                                error={
-                                  Boolean(touched.email) && Boolean(errors.email)
-                                }
-                                helperText={touched.email && errors.email}
                                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                                 
                                   placeholder="Enter Your Email"
@@ -321,10 +299,6 @@ export const Form = () => {
                                 onChange={handleChange}
                                 value={values.password}
                                 name="password"
-                                error={
-                                  Boolean(touched.password) && Boolean(errors.password)
-                                }
-                                helperText={touched.password && errors.password}
                                   className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                                   
                                   placeholder="Enter Your Password"
