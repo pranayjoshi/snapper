@@ -8,7 +8,6 @@ import {
     Photo,
     Microphone,
     EllipsisHorizontalCircle,
-    Gif,
   } from "@styled-icons/heroicons-outline/";
 import {
     Create
@@ -27,7 +26,6 @@ import {
     const [post, setPost] = useState("");
     const { _id } = useSelector((state) => state.user);
     const token = useSelector((state) => state.token);
-    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   
     const handlePost = async () => {
       const formData = new FormData();
@@ -70,11 +68,7 @@ import {
               {({ getRootProps, getInputProps }) => (
                 <div className="flex">
                   <div
-                    {...getRootProps()}
-                    border={`2px dashed ${palette.primary.main}`}
-                    p="1rem"
-                    width="100%"
-                    sx={{ "&:hover": { cursor: "pointer" } }}
+                  className="border-2 border-dashed cursor-pointer text-gray-700 dark:text-gray-200" {...getRootProps()}
                   >
                     <input {...getInputProps()} />
                     {!image ? (
@@ -82,17 +76,16 @@ import {
                     ) : (
                       <div>
                         <p>{image.name}</p>
-                        <EditOutlined />
+                        <Pencil />
                       </div>
                     )}
                   </div>
                   {image && (
-                    <IconButton
+                    <button
                       onClick={() => setImage(null)}
-                      sx={{ width: "15%" }}
                     >
-                      <DeleteOutlined />
-                    </IconButton>
+                      <Trash />
+                    </button>
                   )}
                 </div>
               )}
@@ -102,32 +95,30 @@ import {
   
         <div className="flex">
         <div className="flex" onClick={() => setIsImage(!isImage)}>
-            <ImageOutlined sx={{ color: mediumMain }} />
-            <Typography
-              color={mediumMain}
-              sx={{ "&:hover": { cursor: "pointer", color: medium } }}
+            <Photo className="text-gray-700 dark:text-gray-200" />
+            <p
+              className="text-gray-500 cursor-pointer"
             >
               Image
-            </Typography>
+            </p>
           </div>
-  
           <div className="hidden lg:block">
-            <>
+            <div>
               <div className="flex">
-                <Gift sx={{ color: mediumMain }} />
-                <p color={mediumMain}>Clip</p>
+                <Gift className="text-gray-700 dark:text-gray-200" />
+                <p className="text-gray-700 dark:text-gray-200">Clip</p>
               </div>
   
               <div className="flex">
-                <PaperClip sx={{ color: mediumMain }} />
-                <p color={mediumMain}>Attachment</p>
+                <PaperClip className="text-gray-700 dark:text-gray-200" />
+                <p className="text-gray-700 dark:text-gray-200">Attachment</p>
               </div>
   
               <div className="flex">
-                <MicOutlined sx={{ color: mediumMain }} />
-                <p color={mediumMain}>Audio</p>
+                <Microphone className="text-gray-700 dark:text-gray-200" />
+                <p className="text-gray-700 dark:text-gray-200">Audio</p>
               </div>
-            </>
+            </div>
           </div>
           <div className="lg:hidden block">
             <EllipsisHorizontalCircle className="text-gray-400" />
