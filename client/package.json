@@ -6,8 +6,6 @@
     "@emotion/react": "^11.10.6",
     "@emotion/style": "^0.8.0",
     "@heroicons/react": "^2.0.16",
-    "@mui/icons-material": "^5.11.11",
-    "@mui/material": "^5.11.14",
     "@reduxjs/toolkit": "^1.9.3",
     "@styled-icons/heroicons-outline": "^10.47.0",
     "@styled-icons/ionicons-outline": "^10.46.0",
