@@ -35,7 +35,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }:Props) => {
   return (
     <div className="flex">
       <div className="flex">
-        <UserImage image={userPicturePath} size="55px" />
+        <UserImage image={userPicturePath}/>
         <div
           onClick={() => {
             navigate(`/profile/${friendId}`);

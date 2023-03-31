@@ -103,7 +103,7 @@ import {
             </p>
           </div>
           <div className="hidden lg:block">
-            <div>
+            <div className="flex">
               <div className="flex">
                 <Gift className="text-gray-700 dark:text-gray-200" />
                 <p className="text-gray-700 dark:text-gray-200">Clip</p>

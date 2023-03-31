@@ -11,12 +11,24 @@ const HomePage = () => {
   const { _id, picturePath } = useSelector((state:any) => state.user);
   
   return (
-    <><Navbar />
-    <div>homePage</div>
-    <Advertisement />
-    <UserWidget userId={_id} picturePath={picturePath} />
-    <FriendListWidget userId={_id} />
-    <MyPostWidget picturePath={picturePath}/>
+    <><div>
+      <Navbar />
+      <div className='w-full p-8 block lg:flex justify-between'
+      >
+        <div className='hidden lg:w-3/12 lg:block'>
+        <UserWidget userId={_id} picturePath={picturePath} />
+      </div>
+      <div className='hidden lg:w-5/12 lg:block p-8 lg:p-0'>
+      <MyPostWidget picturePath={picturePath} /></div>
+      {/* <PostsWidget userId={_id} /> */}
+    
+    <div className='hidden lg:w-3/12 lg:block'>
+        <Advertisement />
+        <div className='p-8'></div>
+        <FriendListWidget userId={_id} />
+    </div>
+    </div>
+    </div>
     </>
   )
 }

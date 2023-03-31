@@ -47,7 +47,7 @@ const UserWidget = ({userId, picturePath}:Props) => {
     <div className="border rounded-lg divide-y ">
       <div onClick={() => navigate(`/profile/${userId}`)} className="flex">
         <UserImage image={picturePath} />
-        <p>
+        <p className="px-4 py-2">
           {firstName} {lastName}
         </p>
       </div>
