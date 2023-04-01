@@ -7,7 +7,7 @@ import PostWidget from "./PostWidget";
 
 interface Props{
     userId:string,
-    isProfile:boolean
+    isProfile?:boolean
 }
 
 const PostsWidget = ({ userId, isProfile = false }:Props) => {
