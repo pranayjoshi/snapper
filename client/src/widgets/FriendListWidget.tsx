@@ -29,20 +29,20 @@ const FriendListWidget = ({ userId }:Props) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div >
+    <div className="p-2 rounded-lg shadow-lg border" >
       <p
         className="text-gray-700 dark:text-gray-200"
       >
         Friend List
       </p>
-      <div className="divide-y flex flex-col">
+      <div className="divide-y flex flex-col ">
         {friends.map((friend:any) => (
           <Friend
             key={friend._id}
             friendId={friend._id}
             name={`${friend.firstName} ${friend.lastName}`}
             subtitle={friend.occupation}
-            userPicturePath={friend.picturePath}
+            userPicturePath={friend.picturePath} 
           />
         ))}
       </div>

@@ -33,7 +33,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }:Props) => {
   };
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between m-2">
       <div className="flex gap-4">
         <UserImage image={userPicturePath}/>
         <div
@@ -43,11 +43,11 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }:Props) => {
           }}
         >
           <p
-            className="text-gray-700 dark:text-gray-200 cursor-pointer"
+            className="text-gray-700 dark:text-gray-200 cursor-pointer text-sm"
           >
             {name}
           </p>
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-sm">
             {subtitle}
           </p>
         </div>

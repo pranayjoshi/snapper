@@ -58,7 +58,7 @@
           subtitle={location}
           userPicturePath={userPicturePath}
         />
-        <p className="mt-4 text-gray-700 dark:text-gray-200">
+        <p className="mt-4 pt-2 text-gray-700 dark:text-gray-200">
           {description}
         </p>
         {picturePath && (
@@ -72,7 +72,7 @@
         )}
         <div className="mt-1 flex">
           <div className="gap-4 flex">
-            <div className="flex gap-1">
+            <div className="flex mt-2 gap-1">
               <button onClick={patchLike}>
                 {isLiked ? (
                   <HeartFilled className="text-blue-400 w-6" />
@@ -83,7 +83,7 @@
               <p className="text-gray-700 dark:text-gray-200">{likeCount}</p>
             </div>
   
-            <div className="flex gap-1">
+            <div className="flex gap-1 mt-2">
               <button onClick={() => setIsComments(!isComments)}>
                 <ChatBubbleLeftEllipsis className="text-gray-700 dark:text-gray-200 w-6" />
               </button>
