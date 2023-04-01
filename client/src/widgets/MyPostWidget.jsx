@@ -65,15 +65,15 @@ import {
               {({ getRootProps, getInputProps }) => (
                 <div className="flex">
                   <div
-                  className="border-2 p-4 m-2 border-dashed cursor-pointer text-gray-700 dark:text-gray-200" {...getRootProps()}
+                  className="border-2 p-4 m-2 border-dashed cursor-pointer text-gray-700 dark:text-gray-200 w-full" {...getRootProps()}
                   >
                     <input {...getInputProps()} />
                     {!image ? (
                       <p>Add Image Here</p>
                     ) : (
-                      <div className="w-full">
+                      <div className="w-full flex justify-between">
                         <p>{image.name}</p>
-                        <Pencil />
+                        <Pencil  className="w-6 h-6 text-gray-700 dark:text-gray-200" />
                       </div>
                     )}
                   </div>
@@ -81,7 +81,7 @@ import {
                     <button
                       onClick={() => setImage(null)}
                     >
-                      <Trash className="w-6 h-6"/>
+                      <Trash className="w-6 h-6 text-gray-700 dark:text-gray-200 m-2"/>
                     </button>
                   )}
                 </div>
@@ -90,18 +90,18 @@ import {
           </div>
         )}
         
-        <div className="p-4 flex gap-4">
-          <div className="flex" onClick={() => setIsImage(!isImage)}>
+        <div className="p-4 flex gap-4 justify-around w-full">
+          <div className="flex mt-2" onClick={() => setIsImage(!isImage)}>
             <Photo className="text-gray-700 dark:text-gray-200  w-5 h-5" />
             <p
-              className="text-gray-500 cursor-pointer text-sm"
+              className="text-gray-700 dark:text-gray-200 cursor-pointer text-sm"
             >
               Image
             </p>
           </div>
-          <div className="hidden lg:block">
-            <div className="flex gap-4 justify-around">
-              <div className="flex">
+          <div className="hidden lg:block justify-around w-full mt-2">
+            <div className="flex gap-4 justify-between">
+              <div className="flex justify-between">
                 <Gift className="text-gray-700 dark:text-gray-200 w-5 h-5" />
                 <p className="text-gray-700 dark:text-gray-200 text-sm">Clip</p>
               </div>

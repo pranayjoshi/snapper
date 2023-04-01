@@ -46,8 +46,8 @@ const UserWidget = ({userId, picturePath}:Props) => {
   } = user;
 
   return (
-    <div className="border rounded-lg divide-y ">
-      <div onClick={() => navigate(`/profile/${userId}`)} className="flex">
+    <div className="border rounded-lg divide-y">
+      <div onClick={() => navigate(`/profile/${userId}`)} className="flex justify-between">
         <div className="py-2 pl-2"><UserImage image={picturePath} /></div>
         <div>
         <p className="px-2 pt-4 text-gray-700 dark:text-gray-200 text-sm">
@@ -55,7 +55,7 @@ const UserWidget = ({userId, picturePath}:Props) => {
         </p>
         <p className="text-gray-400 px-2 text-xs">{friends["length"]} friends</p>
         </div>
-        <Cog6Tooth className="w-6 ml-12 text-gray-700 dark:text-gray-200"/>
+        <Cog6Tooth className="w-6 m-2 text-gray-700 dark:text-gray-200"/>
       </div>
       <div >
         <div className="flex m-2">

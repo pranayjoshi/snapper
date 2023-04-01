@@ -61,6 +61,7 @@ const PostsWidget = ({ userId, isProfile = false }:Props) => {
 
   return (
     <>
+    <div className="flex flex-col-reverse">
       {posts.map(
         ({
             _id,
@@ -74,6 +75,7 @@ const PostsWidget = ({ userId, isProfile = false }:Props) => {
             likes,
             comments,
         }:Props2) => (
+            
           <PostWidget
             key={_id}
             postId={_id}
@@ -86,8 +88,10 @@ const PostsWidget = ({ userId, isProfile = false }:Props) => {
             likes={likes}
             comments={comments}
           />
+          
         )
       )}
+      </div>
     </>
   );
 };

@@ -36,8 +36,8 @@ const ProfilePage = () => {
           <div className="m-8" />
           <FriendListWidget userId={userId as string} />
         </div>
-        <div className="lg:block hidden lg:w-5/12 m-8 lg:m-0">
-          <MyPostWidget picturePath={user["picturePath"]} />
+        <div className="lg:block  lg:w-5/12 lg:m-0">
+          <div className="block lg:hidden"><UserWidget userId={userId as string} picturePath={user["picturePath"]} /></div>
           <div className="m-8" />
           <PostsWidget userId={userId as string} isProfile />
         </div>
