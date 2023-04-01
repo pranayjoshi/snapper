@@ -21,6 +21,7 @@ const FriendListWidget = ({ userId }:Props) => {
       }
     );
     const data = await response.json();
+    console.log(data)
     dispatch(setFriends({ friends: data }));
   };
 

@@ -35,6 +35,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }:Props) => {
   return (
     <div className="flex justify-between m-2">
       <div className="flex gap-4">
+        <p>{userPicturePath}</p>
         <UserImage image={userPicturePath}/>
         <div
           onClick={() => {

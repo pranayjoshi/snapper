@@ -35,7 +35,7 @@
     const token = useSelector((state:any) => state.token);
     const loggedInUserId = useSelector((state:any) => state.user._id);
     const isLiked = Boolean(likes[loggedInUserId]);
-    const likeCount = 10;
+    const likeCount = !Object.keys(likes) ||  Object.keys(likes).length;
   
     const patchLike = async () => {
       const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
@@ -87,7 +87,7 @@
               <button onClick={() => setIsComments(!isComments)}>
                 <ChatBubbleLeftEllipsis className="text-gray-700 dark:text-gray-200 w-6" />
               </button>
-              <p className="text-gray-700 dark:text-gray-200">{comments.length}</p>
+              <p className="text-gray-700 dark:text-gray-200">{!comments || comments["length"] === 0 }</p>
             </div>
           </div>
   
