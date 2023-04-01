@@ -33,8 +33,8 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }:Props) => {
   };
 
   return (
-    <div className="flex">
-      <div className="flex">
+    <div className="flex justify-between">
+      <div className="flex gap-4">
         <UserImage image={userPicturePath}/>
         <div
           onClick={() => {
@@ -54,9 +54,9 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }:Props) => {
       </div>
       <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center" onClick={() => patchFriend()}>
         {isFriend ? (
-          <UserMinus className="text-gray-700 dark:text-gray-200" />
+          <UserMinus className="text-gray-700 dark:text-gray-200 w-6" />
         ) : (
-          <UserMinus className="text-gray-700 dark:text-gray-200" />
+          <UserPlus className="text-gray-700 dark:text-gray-200 w-6" />
         )}
       </button>
     </div>

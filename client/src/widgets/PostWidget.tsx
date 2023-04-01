@@ -35,7 +35,7 @@
     const token = useSelector((state:any) => state.token);
     const loggedInUserId = useSelector((state:any) => state.user._id);
     const isLiked = Boolean(likes[loggedInUserId]);
-    const likeCount = Object.keys(likes).length;
+    const likeCount = 10;
   
     const patchLike = async () => {
       const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
@@ -51,7 +51,7 @@
     };
   
     return (
-      <div className="m-8">
+      <div className="my-8 rounded-lg divide-y border shadow-lg p-2">
         <Friend
           friendId={postUserId}
           name={name}
@@ -75,19 +75,19 @@
             <div className="flex gap-1">
               <button onClick={patchLike}>
                 {isLiked ? (
-                  <HeartFilled />
+                  <HeartFilled className="text-blue-400 w-6" />
                 ) : (
-                  <Heart />
+                  <Heart className="text-blue-400 w-6"/>
                 )}
               </button>
-              <p>{likeCount}</p>
+              <p className="text-gray-700 dark:text-gray-200">{likeCount}</p>
             </div>
   
             <div className="flex gap-1">
               <button onClick={() => setIsComments(!isComments)}>
-                <ChatBubbleLeftEllipsis />
+                <ChatBubbleLeftEllipsis className="text-gray-700 dark:text-gray-200 w-6" />
               </button>
-              <p>{comments.length}</p>
+              <p className="text-gray-700 dark:text-gray-200">10</p>
             </div>
           </div>
   

@@ -16,13 +16,13 @@ const HomePage = () => {
       <Navbar />
       <div className='w-full p-8 block lg:flex justify-between'
       >
-        <div className='hidden lg:w-3/12 lg:block'>
+        <div className='hidden lg:w-3/12 lg:block h-full max-h-screen overflow-y-auto'>
         <UserWidget userId={_id} picturePath={picturePath} />
       </div>
-      <div className='hidden lg:w-5/12 lg:block p-8 lg:p-0'>
-      <MyPostWidget picturePath={picturePath} /></div>
+      <div className='hidden lg:w-5/12 lg:block p-8 lg:p-0 max-h-screen overflow-y-auto scrollbar-hide'>
+      <MyPostWidget picturePath={picturePath} />
       <PostsWidget userId={_id} />
-    
+      </div>
     <div className='hidden lg:w-3/12 lg:block'>
         <Advertisement />
         <div className='p-8'></div>
