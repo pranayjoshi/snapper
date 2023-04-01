@@ -34,6 +34,7 @@ const PostsWidget = ({ userId, isProfile = false }:Props) => {
       }
     );
     const data = await response.json();
+    console.log(data)
     dispatch(setPosts({ posts: data }));
   };
 
