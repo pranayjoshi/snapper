@@ -38,7 +38,7 @@ const ProfilePage = () => {
         </div>
         <div className="lg:block  lg:w-5/12 lg:m-0">
           <div className="block lg:hidden"><UserWidget userId={userId as string} picturePath={user["picturePath"]} /></div>
-          <div className="m-8" />
+          <div className="m-8 lg:m-0" />
           <PostsWidget userId={userId as string} isProfile />
         </div>
       </div>
