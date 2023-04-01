@@ -87,7 +87,7 @@
               <button onClick={() => setIsComments(!isComments)}>
                 <ChatBubbleLeftEllipsis className="text-gray-700 dark:text-gray-200 w-6" />
               </button>
-              <p className="text-gray-700 dark:text-gray-200">10</p>
+              <p className="text-gray-700 dark:text-gray-200">{comments.length}</p>
             </div>
           </div>
   
