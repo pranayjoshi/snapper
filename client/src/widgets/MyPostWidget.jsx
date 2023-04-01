@@ -48,15 +48,12 @@ import {
     };
   
     return (
-      <div className="rounded-lg divide-y">
-        <div className="flex" >
-          <UserImage image={picturePath} />
-          <input
-            placeholder="What's on your mind..."
-            onChange={(e) => setPost(e.target.value)}
-            value={post}
-            className="text-gray-700 dark:text-gray-200"
-          />
+      <div className="rounded-lg divide-y border shadow-lg p-2">
+        <div className="flex mb-4" >
+          <div className="h-20 w-20"><UserImage image={picturePath} /></div>
+          
+          <textarea id="message" rows="4" onChange={(e) => setPost(e.target.value)} value={post}
+          className="block  w-full text-sm p-2 text-gray-700 dark:text-gray-200 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
         </div>
         {isImage && (
           <div className="border">
@@ -68,13 +65,13 @@ import {
               {({ getRootProps, getInputProps }) => (
                 <div className="flex">
                   <div
-                  className="border-2 border-dashed cursor-pointer text-gray-700 dark:text-gray-200" {...getRootProps()}
+                  className="border-2 p-4 m-2 border-dashed cursor-pointer text-gray-700 dark:text-gray-200" {...getRootProps()}
                   >
                     <input {...getInputProps()} />
                     {!image ? (
                       <p>Add Image Here</p>
                     ) : (
-                      <div>
+                      <div className="w-full">
                         <p>{image.name}</p>
                         <Pencil />
                       </div>
@@ -84,7 +81,7 @@ import {
                     <button
                       onClick={() => setImage(null)}
                     >
-                      <Trash />
+                      <Trash className="w-6 h-6"/>
                     </button>
                   )}
                 </div>
@@ -92,45 +89,46 @@ import {
             </Dropzone>
           </div>
         )}
-  
-        <div className="flex">
-        <div className="flex" onClick={() => setIsImage(!isImage)}>
-            <Photo className="text-gray-700 dark:text-gray-200" />
+        
+        <div className="p-4 flex gap-4">
+          <div className="flex" onClick={() => setIsImage(!isImage)}>
+            <Photo className="text-gray-700 dark:text-gray-200  w-5 h-5" />
             <p
-              className="text-gray-500 cursor-pointer"
+              className="text-gray-500 cursor-pointer text-sm"
             >
               Image
             </p>
           </div>
           <div className="hidden lg:block">
-            <div className="flex">
+            <div className="flex gap-4">
               <div className="flex">
-                <Gift className="text-gray-700 dark:text-gray-200" />
-                <p className="text-gray-700 dark:text-gray-200">Clip</p>
+                <Gift className="text-gray-700 dark:text-gray-200 w-5 h-5" />
+                <p className="text-gray-700 dark:text-gray-200 text-sm">Clip</p>
               </div>
   
               <div className="flex">
-                <PaperClip className="text-gray-700 dark:text-gray-200" />
-                <p className="text-gray-700 dark:text-gray-200">Attachment</p>
+                <PaperClip className="text-gray-700 dark:text-gray-200 w-5 h-5" />
+                <p className="text-gray-700 dark:text-gray-200 text-sm">Attach</p>
               </div>
   
               <div className="flex">
-                <Microphone className="text-gray-700 dark:text-gray-200" />
-                <p className="text-gray-700 dark:text-gray-200">Audio</p>
+                <Microphone className="text-gray-700 dark:text-gray-200 w-5 h-5" />
+                <p className="text-gray-700 dark:text-gray-200 text-sm">Audio</p>
               </div>
             </div>
           </div>
           <div className="lg:hidden block">
-            <EllipsisHorizontalCircle className="text-gray-400" />
+            <div><EllipsisHorizontalCircle className="text-gray-400 w-5 h-5" /></div>
           </div>
   
           <button
             disabled={!post}
             onClick={handlePost}
-            className="flex"
+            
           >
-            <Create />
-            <span>Post</span>
+            <div className="flex bg-blue-400 px-4 py-2 rounded-full ">
+            <Create className= " text-white dark:text-gray-200 w-5 h-5"/>
+            <span className="text-white text-sm dark:text-gray-200">Post</span></div>
           </button>
         </div>
       </div>
