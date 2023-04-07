@@ -117,8 +117,8 @@ import {
               </div>
             </div>
           </div>
-          <div className="lg:hidden block">
-            <div><EllipsisHorizontalCircle className="text-gray-400 w-5 h-5" /></div>
+          <div className="lg:hidden block mt-2">
+            {/* <div><EllipsisHorizontalCircle className="text-gray-400 w-5 h-5" /></div> */}
           </div>
   
           <button

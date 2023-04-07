@@ -17,6 +17,8 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }:Props) => {
 
   const isFriend = friends.find((friend:any) => friend._id === friendId);
 
+  const isNotUser = _id !== friendId;
+
   const patchFriend = async () => {
     const response = await fetch(
       `http://localhost:3001/users/${_id}/${friendId}`,
@@ -54,11 +56,13 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }:Props) => {
         </div>
       </div>
       <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center" onClick={() => patchFriend()}>
-        {isFriend ? (
+        
+        {isNotUser ?
+        isFriend ? (
           <UserMinus className="text-gray-700 dark:text-gray-200 w-6" />
         ) : (
           <UserPlus className="text-gray-700 dark:text-gray-200 w-6" />
-        )}
+        ): ""}
       </button>
     </div>
   );
