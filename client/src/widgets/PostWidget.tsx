@@ -38,6 +38,7 @@
     const likeCount = !Object.keys(likes) ||  Object.keys(likes).length;
   
     const patchLike = async () => {
+      console.log("Patch", postId, loggedInUserId)
       const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
         method: "PATCH",
         headers: {
