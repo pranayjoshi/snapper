@@ -12,8 +12,8 @@ Snapper is a social media application designed for sharing special moments. Capt
 
 1. Clone the repository: `git clone https://github.com/pranayjoshi/snapper.git`
 2. Navigate into the directory: `cd snapper`
-3. Install the dependencies: `npm install`
-4. Start the server: `npm start`
+3. Start the server: `make run`
+4. Login or sign up and enjoy the platform :)
 
 ## Contributing
 
@@ -23,6 +23,6 @@ We welcome contributions from the community. If you wish to contribute, please t
 
 Snapper is licensed under the [MIT License](LICENSE).
 
-## Contact
 
-If you have any questions, feel free to reach out to us at [snapper@support.com](mailto:snapper@support.com).
+## Screenshots
+

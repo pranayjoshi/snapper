@@ -1,12 +1,12 @@
 .PHONY: all client server run
 all: client server
 client:
-	cd client && npm install && npm run dev
+	cd client && npm start
 server:
-	cd server && go run main.go .
+	cd server && nodemon index.ts.
 run:
-	tmux new-session -d -s client 'cd client && npm run dev'
-	tmux new-session -d -s server 'cd server && ./main'
+	tmux new-session -d -s client 'cd client && npm start'
+	tmux new-session -d -s server 'cd server && nodemon index.ts'
 clean:
 	cd client && rm -rf node_modules && rm -rf bclientld
 	cd server && rm main
