@@ -87,7 +87,7 @@ const UserWidget = ({userId, picturePath}:Props) => {
           Social Profiles
         </p>
 
-        <div className="flex">
+        <div className="flex my-2">
           <div className="flex gap-4">
             <LogoTwitter className="w-6 text-gray-700 dark:text-gray-200"/>
             <div>
