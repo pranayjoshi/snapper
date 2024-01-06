@@ -53,13 +53,14 @@
   
     return (
       <div className="my-8 rounded-lg divide-y border shadow-lg p-2">
+        <div className="">
         <Friend
           friendId={postUserId}
           name={name}
           subtitle={location}
           userPicturePath={userPicturePath}
-        />
-        <p className="mt-4 pt-2 text-gray-700 dark:text-gray-200">
+        /></div>
+        <p className="mt-4 pt-2 text-gray-700 dark:text-gray-200 m-2">
           {description}
         </p>
         {picturePath && (
