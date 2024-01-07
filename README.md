@@ -25,4 +25,6 @@ Snapper is licensed under the [MIT License](LICENSE).
 
 
 ## Screenshots
-
+![P1 Image](./img/p1.png "P1 Image")
+![P2 Image](./img/p2.png "P2 Image")
+![P3 Image](./img/p3.png "P3 Image")
